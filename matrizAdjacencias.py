@@ -3,11 +3,12 @@ class MatrizAdjacencias:
     # inicializa o grafo:    
     def __init__(self, numVertices):
         self.numVertices = numVertices
-        self.numArestas = 0
-        self.matriz = [[0]* self.numVertices for i in range(self.numVertices)]
+        self.numArestas = 0   
+        self.graus = [0] * self.numVertices
         # self.matriz = []
         # for i in range(self.numVertices):
         #    self.matriz.append([0] * self.numVertices)
+        self.matriz = [[0]* self.numVertices for i in range(self.numVertices)]
 
     # retorna a ordem do grafo:
     def ordem(self):
@@ -22,6 +23,7 @@ class MatrizAdjacencias:
     def addAresta(self, v1, v2, peso = 1):
         if self.matriz[v1][v2] == 0:
             self.numArestas += 1
+            self.graus[v1] += 1
         self.matriz[v1][v2] = peso
 
     # retorna True se existe uma aresta (v1,v2) no grafo:
@@ -38,7 +40,8 @@ class MatrizAdjacencias:
     
     # retorna o grau (saida) de um vertice:
     def grau(self, v):
-        print("Implementar metodo grau...")
+        return self.graus[v]
+        # return len(self.vizinhos(v))
 
     # printa o grafo no formato de matriz de adjacencias:
     def printGrafo(self):
