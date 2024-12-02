@@ -16,3 +16,8 @@ def completo(grafo):
 # retorna True se o grafo eh regular:
 def regular(grafo):
     print("Implementar metodo regular...")
+
+# retorna um subgrafo induzido pelo conjunto
+# de vertices:
+def subgrafo(grafo):
+    print("Implementar metodo subgrafo...")
