@@ -26,6 +26,7 @@ if __name__ == "__main__":
 
     print(f"Vizinhos de 3: {grafo.vizinhos(3)}")
 
-    # for i in range(grafo.numVertices):
-    #     print(f"Vertice {i}: grau = {grafo.grau(i)}")
-    
+    for i in range(grafo.numVertices):
+        print(f"Vertice {i}: grau = {grafo.grau(i)}")
+
+    print(f"Densidade = {info.densidade(grafo)}")

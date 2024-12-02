@@ -3,7 +3,7 @@ import matrizAdjacencias
 
 # retorna a densidade do grafo:
 def densidade(grafo):
-    print("Implementar metodo densidade...")
+    return grafo.numArestas / (grafo.numVertices * (grafo.numVertices - 1))
 
 # retorna o complemento do grafo:
 def complemento(grafo):

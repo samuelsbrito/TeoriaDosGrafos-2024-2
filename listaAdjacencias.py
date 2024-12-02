@@ -18,6 +18,7 @@ class ListaAdjacencias:
     # peso eh um parametro opcional
     def addAresta(self, v1, v2, peso = 1):
         self.lista[v1].append((v2, peso))
+        self.numArestas += 1
 
     # retorna True se existe uma aresta (v1,v2) no grafo:
     def possuiAresta(self, v1, v2):
