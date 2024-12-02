@@ -19,5 +19,5 @@ def regular(grafo):
 
 # retorna um subgrafo induzido pelo conjunto
 # de vertices:
-def subgrafo(grafo):
+def subgrafo(grafo, vertices):
     print("Implementar metodo subgrafo...")
