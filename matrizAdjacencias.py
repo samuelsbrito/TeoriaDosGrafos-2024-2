@@ -5,9 +5,6 @@ class MatrizAdjacencias:
         self.numVertices = numVertices
         self.numArestas = 0   
         self.graus = [0] * self.numVertices
-        # self.matriz = []
-        # for i in range(self.numVertices):
-        #    self.matriz.append([0] * self.numVertices)
         self.matriz = [[0]* self.numVertices for i in range(self.numVertices)]
 
     # retorna a ordem do grafo:
@@ -30,18 +27,18 @@ class MatrizAdjacencias:
     def possuiAresta(self, v1, v2):
         return self.matriz[v1][v2] != 0
 
-    # retorna uma lista com os vizinhos de v:
+    # retorna uma lista de tuplas (vertice, peso)
+    # com os vizinhos de v:
     def vizinhos(self, v):
         vz = []
         for j in range(self.numVertices):
             if self.matriz[v][j] != 0:
-                vz.append(j)
+                vz.append((j, self.matriz[v][j]))
         return vz
     
     # retorna o grau (saida) de um vertice:
     def grau(self, v):
         return self.graus[v]
-        # return len(self.vizinhos(v))
 
     # printa o grafo no formato de matriz de adjacencias:
     def printGrafo(self):
