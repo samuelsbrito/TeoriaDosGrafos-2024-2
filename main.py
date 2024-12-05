@@ -30,3 +30,19 @@ if __name__ == "__main__":
         print(f"Vertice {i}: grau = {grafo.grau(i)}")
 
     print(f"Densidade = {info.densidade(grafo)}")
+
+    print("Complemento do grafo:")
+    complemento = info.complemento(grafo)
+    complemento.printGrafo()
+
+    print(f"Grafo completo? {info.completo(grafo)}")
+
+    print(f"Grafo regular? {info.regular(grafo)}")
+
+    vertices = [0, 2, 3]
+    subgrafo = info.subgrafo(grafo, vertices)
+    for i in range(subgrafo.numVertices):
+        print(f"{vertices[i]} -> ", end=" ")
+        for (j, p) in subgrafo.vizinhos(i):
+            print(vertices[j], end=" ")
+        print()
